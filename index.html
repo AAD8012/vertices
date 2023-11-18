@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 400vh; /* Aumenta la altura de la página para permitir más scroll */
+        position: relative;
+        background-color: #f5f5f5;
+      }
+
+      .curtain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black; /* Fondo gris por defecto */
+        z-index: 1;
+        transition: opacity 1s ease; /* Transición para la opacidad */
+      }
+
+      .content {
+        position: absolute;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        bottom: 1%;
+        color: #000; /* Color del texto */
+      }
+      .content #title {
+        font-size: 150px;
+      }
+      .content #subtitle {
+        font-size: 30px;
+      }
+
+      #imageContainer_hci img {
+        display: none;
+        width: 100%;
+      }
+
+      #imageContainer_hci img.active {
+        display: block;
+      }
+
+      #imageContainer_seguridad img {
+        display: none;
+        width: 100%;
+      }
+
+      #imageContainer_seguridad img.active {
+        display: block;
+      }
+
+      #imageContainer_user img {
+        display: none;
+        width: 100%;
+      }
+
+      #imageContainer_user img.active {
+        display: block;
+      }
+      #imageContainer_datos img {
+        display: none;
+        width: 100%;
+      }
+
+      #imageContainer_datos img.active {
+        display: block;
+      }
+
+      #imageContainer_proceso img {
+        display: none;
+        width: 100%;
+      }
+
+      #imageContainer_proceso img.active {
+        display: block;
+      }
+
+      #imageContainer_nube img {
+        display: none;
+        width: 100%;
+      }
+
+      #imageContainer_nube img.active {
+        display: block;
+      }
+
+      #imageContainer_monitoreo img {
+        display: none;
+        width: 100%;
+      }
+
+      #imageContainer_monitoreo img.active {
+        display: block;
+      }
+
+      #imageContainer_redes img {
+        display: none;
+        width: 100%;
+      }
+
+      #imageContainer_redes img.active {
+        display: block;
+      }
+      .cont-description {
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="curtain"></div>
+    <div class="content" id="welcomeMessage">
+      <!-- Tu contenido va aquí -->
+
+      <p
+        id="title"
+        class="animate__animated animate__fadeInLeft animate__delay-2s"
+      >
+        <span>Verticales de Negocio</span>
+      </p>
+      <p
+        id="subtitle"
+        style="margin-bottom: 100px"
+        class="animate__animated animate__backInUp animate__delay-2s"
+      >
+        Descubre como nuestras estrategias pueden desarrollar el máximo
+        potencial de tu empresa.
+      </p>
+      <div class="container text-center">
+        <div class="row gap-5">
+          <div
+            class="col animate__animated animate__backInUp animate__delay-2s"
+          >
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: start; margin-bottom: 50px; font-size: 50px"
+              >
+                01
+              </div>
+              <div class="col-12" style="font-size: 25px; margin-bottom: 50px">
+                HCI + SDDC
+              </div>
+
+              <div
+                class="col-12 cont-description"
+                style="
+                  text-align: justify;
+                  font-size: 15px;
+                  margin-bottom: 50px;
+                "
+              >
+                Transformamos la infraestructura de TI para que sea definida por
+                software que virtualiza todos los elementos de los sistemas
+                convencionales definidos por hardware.
+              </div>
+              <div class="col-12">
+                <div id="imageContainer_hci"></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col animate__animated animate__backInUp animate__delay-2s"
+          >
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: start; margin-bottom: 50px; font-size: 50px"
+              >
+                02
+              </div>
+              <div class="col-12" style="font-size: 25px; margin-bottom: 50px">
+                SEGURIDAD
+              </div>
+
+              <div
+                class="col-12 cont-description"
+                style="
+                  text-align: justify;
+                  font-size: 15px;
+                  margin-bottom: 50px;
+                "
+              >
+                Habilitamos y apoyamos en cada momento crítico sobre las
+                amenazas cibernéticas, antes y durante los eventos.
+              </div>
+              <div class="col-12">
+                <div id="imageContainer_seguridad"></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col animate__animated animate__backInUp animate__delay-2s"
+          >
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: start; margin-bottom: 50px; font-size: 50px"
+              >
+                03
+              </div>
+              <div class="col-12" style="font-size: 25px; margin-bottom: 50px">
+                USUARIO FINAL
+              </div>
+
+              <div
+                class="col-12 cont-description"
+                style="
+                  text-align: justify;
+                  font-size: 15px;
+                  margin-bottom: 50px;
+                "
+              >
+                Nos aseguramos de que los usuarios, con distintos dispositivos,
+                puedan acceder a sus aplicaciones y datos desde cualquier lugar
+                y en cualquier momento.
+              </div>
+              <div class="col-12">
+                <div id="imageContainer_user"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center">
+        <div class="row gap-5">
+          <div
+            class="col animate__animated animate__backInUp animate__delay-2s"
+          >
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: start; margin-bottom: 50px; font-size: 50px"
+              >
+                04
+              </div>
+              <div class="col-12" style="font-size: 25px; margin-bottom: 50px">
+                Datos
+              </div>
+
+              <div
+                class="col-12 cont-description"
+                style="
+                  text-align: justify;
+                  font-size: 15px;
+                  margin-bottom: 50px;
+                "
+              >
+                Podemos conectar a los creadores y consumidores de datos sin
+                dificultades para analizar datos de manera rápida y aprovechar
+                todo el valor que ofrecen.
+              </div>
+              <div class="col-12">
+                <div id="imageContainer_datos"></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col animate__animated animate__backInUp animate__delay-2s"
+          >
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: start; margin-bottom: 50px; font-size: 50px"
+              >
+                05
+              </div>
+              <div class="col-12" style="font-size: 25px; margin-bottom: 50px">
+                PROCESOS
+              </div>
+
+              <div
+                class="col-12 cont-description"
+                style="
+                  text-align: justify;
+                  font-size: 15px;
+                  margin-bottom: 50px;
+                "
+              >
+                Desarrollamos Flujos de Trabajo Digitales, conectamos personas,
+                funciones y sistemas en todas las áreas de negocio.
+              </div>
+              <div class="col-12">
+                <div id="imageContainer_proceso"></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col animate__animated animate__backInUp animate__delay-2s"
+          >
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: start; margin-bottom: 50px; font-size: 50px"
+              >
+                06
+              </div>
+              <div class="col-12" style="font-size: 25px; margin-bottom: 50px">
+                NUBE
+              </div>
+
+              <div
+                class="col-12 cont-description"
+                style="
+                  text-align: justify;
+                  font-size: 15px;
+                  margin-bottom: 50px;
+                "
+              >
+                Conoce como libramos a nuestros clientes de la complejidad y el
+                costo de la TI tradicional mediante el poder de la nube híbrida
+                o total.
+              </div>
+              <div class="col-12">
+                <div id="imageContainer_nube"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container text-center">
+        <div class="row gap-5">
+          <div
+            class="col-4 animate__animated animate__backInUp animate__delay-2s"
+          >
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: start; margin-bottom: 50px; font-size: 50px"
+              >
+                07
+              </div>
+              <div class="col-12" style="font-size: 25px; margin-bottom: 50px">
+                REDES
+              </div>
+
+              <div
+                class="col-12 cont-description"
+                style="
+                  text-align: justify;
+                  font-size: 15px;
+                  margin-bottom: 50px;
+                "
+              >
+                Creamos nuevas formas de interactuar con los usuarios
+                aprovechando las redes tecnológicas, monitoreo e interpretación
+                de datos.
+              </div>
+              <div class="col-12">
+                <div id="imageContainer_redes"></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-4 animate__animated animate__backInUp animate__delay-2s"
+          >
+            <div class="row">
+              <div
+                class="col-12"
+                style="text-align: start; margin-bottom: 50px; font-size: 50px"
+              >
+                08
+              </div>
+              <div class="col-12" style="font-size: 25px; margin-bottom: 50px">
+                MONITOREO
+              </div>
+
+              <div
+                class="col-12 cont-description"
+                style="
+                  text-align: justify;
+                  font-size: 15px;
+                  margin-bottom: 50px;
+                "
+              >
+                Llevamos a cabo acciones proactivas y preventivas, así como
+                análisis predictivos de datos que aseguren la disponibilidad de
+                los procesos de negocio.
+              </div>
+              <div class="col-12">
+                <div id="imageContainer_monitoreo"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mostrar el mensaje al cargar la página
+        const welcomeMessage = document.getElementById("welcomeMessage");
+        welcomeMessage.style.opacity = "1";
+
+        // Ajustar la opacidad al hacer scroll
+        window.addEventListener("scroll", function () {
+          console.log("Evento de scroll detectado");
+
+          const curtain = document.querySelector(".curtain");
+          const scrollPosition = window.scrollY;
+          const opacity = 1 - scrollPosition / 1000; // Ajusta este valor según tus necesidades
+
+          curtain.style.opacity = opacity;
+        });
+
+        // hci_2
+        var imageContainer_hci = document.getElementById("imageContainer_hci");
+
+        // Número total de imágenes
+        var totalImages = 180; // Ajusta según sea necesario
+
+        for (var i = 0; i < totalImages; i++) {
+          var imageName = "./hci_2/HCI_2_" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+          var img = document.createElement("img");
+
+          // Configura la clase y el atributo src para la primera imagen
+          if (i === 0) {
+            img.className = "active";
+          }
+
+          img.src = imageName;
+
+          // Agrega la imagen al contenedor
+          imageContainer_hci.appendChild(img);
+        }
+
+        var images = imageContainer_hci.getElementsByTagName("img");
+        var currentIndex = 0;
+
+        var interval = setInterval(function () {
+          var activeImage = images[currentIndex];
+          activeImage.style.display = "none";
+
+          currentIndex = (currentIndex + 1) % images.length;
+
+          var nextImage = images[currentIndex];
+          nextImage.style.display = "block";
+          nextImage.classList.add("active");
+          activeImage.classList.remove("active");
+        }, 30);
+
+        // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+        function pad(number, length) {
+          var str = String(number);
+          while (str.length < length) {
+            str = "0" + str;
+          }
+          return str;
+        }
+
+        // seguridad
+        var imageContainer_seguridad = document.getElementById(
+          "imageContainer_seguridad"
+        );
+
+        // Número total de imágenes
+        var totalImages_seguridad = 120; // Ajusta según sea necesario
+
+        for (var i = 0; i < totalImages_seguridad; i++) {
+          var imageName = "./seguridad/Seguridad" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+          var img = document.createElement("img");
+
+          // Configura la clase y el atributo src para la primera imagen
+          if (i === 0) {
+            img.className = "active";
+          }
+
+          img.src = imageName;
+
+          // Agrega la imagen al contenedor
+          imageContainer_seguridad.appendChild(img);
+        }
+
+        var images_seguridad =
+          imageContainer_seguridad.getElementsByTagName("img");
+        var currentIndex_seguridad = 0;
+
+        var interval_seguridad = setInterval(function () {
+          var activeImage = images_seguridad[currentIndex_seguridad];
+          activeImage.style.display = "none";
+
+          currentIndex_seguridad =
+            (currentIndex_seguridad + 1) % images_seguridad.length;
+
+          var nextImage_seguridad = images_seguridad[currentIndex_seguridad];
+          nextImage_seguridad.style.display = "block";
+          nextImage_seguridad.classList.add("active");
+          activeImage_seguridad.classList.remove("active");
+        }, 30);
+
+        // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+        function pad(number, length) {
+          var str = String(number);
+          while (str.length < length) {
+            str = "0" + str;
+          }
+          return str;
+        }
+
+        // usuario final
+        var imageContainer_user = document.getElementById(
+          "imageContainer_user"
+        );
+
+        // Número total de imágenes
+        var totalImages_user = 180; // Ajusta según sea necesario
+
+        for (var i = 0; i < totalImages_user; i++) {
+          var imageName = "./usuario/Usuario" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+          var img = document.createElement("img");
+
+          // Configura la clase y el atributo src para la primera imagen
+          if (i === 0) {
+            img.className = "active";
+          }
+
+          img.src = imageName;
+
+          // Agrega la imagen al contenedor
+          imageContainer_user.appendChild(img);
+        }
+
+        var images_user = imageContainer_user.getElementsByTagName("img");
+        var currentIndex_user = 0;
+
+        var interval_user = setInterval(function () {
+          var activeImage = images_user[currentIndex_user];
+          activeImage.style.display = "none";
+
+          currentIndex_user = (currentIndex_user + 1) % images_user.length;
+
+          var nextImage_user = images_user[currentIndex_user];
+          nextImage_user.style.display = "block";
+          nextImage_user.classList.add("active");
+          activeImage_user.classList.remove("active");
+        }, 30);
+
+        // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+        function pad(number, length) {
+          var str = String(number);
+          while (str.length < length) {
+            str = "0" + str;
+          }
+          return str;
+        }
+
+        // DATOS
+        var imageContainer_datos = document.getElementById(
+          "imageContainer_datos"
+        );
+
+        // Número total de imágenes
+        var totalImages_datos = 90; // Ajusta según sea necesario
+
+        for (var i = 0; i < totalImages_datos; i++) {
+          var imageName = "./datos/Datos" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+          var img = document.createElement("img");
+
+          // Configura la clase y el atributo src para la primera imagen
+          if (i === 0) {
+            img.className = "active";
+          }
+
+          img.src = imageName;
+
+          // Agrega la imagen al contenedor
+          imageContainer_datos.appendChild(img);
+        }
+
+        var images_datos = imageContainer_datos.getElementsByTagName("img");
+        var currentIndex_datos = 0;
+
+        var interval_datos = setInterval(function () {
+          var activeImage = images_datos[currentIndex_datos];
+          activeImage.style.display = "none";
+
+          currentIndex_datos = (currentIndex_datos + 1) % images_datos.length;
+
+          var nextImage_datos = images_datos[currentIndex_datos];
+          nextImage_datos.style.display = "block";
+          nextImage_datos.classList.add("active");
+          activeImage_datos.classList.remove("active");
+        }, 30);
+
+        // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+        function pad(number, length) {
+          var str = String(number);
+          while (str.length < length) {
+            str = "0" + str;
+          }
+          return str;
+        }
+
+        // PROCESO
+        var imageContainer_proceso = document.getElementById(
+          "imageContainer_proceso"
+        );
+
+        // Número total de imágenes
+        var totalImages_proceso = 120; // Ajusta según sea necesario
+
+        for (var i = 0; i < totalImages_proceso; i++) {
+          var imageName = "./procesos/Procesos" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+          var img = document.createElement("img");
+
+          // Configura la clase y el atributo src para la primera imagen
+          if (i === 0) {
+            img.className = "active";
+          }
+
+          img.src = imageName;
+
+          // Agrega la imagen al contenedor
+          imageContainer_proceso.appendChild(img);
+        }
+
+        var images_proceso = imageContainer_proceso.getElementsByTagName("img");
+        var currentIndex_proceso = 0;
+
+        var interval_proceso = setInterval(function () {
+          var activeImage = images_proceso[currentIndex_proceso];
+          activeImage.style.display = "none";
+
+          currentIndex_proceso =
+            (currentIndex_proceso + 1) % images_proceso.length;
+
+          var nextImage_proceso = images_proceso[currentIndex_proceso];
+          nextImage_proceso.style.display = "block";
+          nextImage_proceso.classList.add("active");
+          activeImage_proceso.classList.remove("active");
+        }, 30);
+
+        // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+        function pad(number, length) {
+          var str = String(number);
+          while (str.length < length) {
+            str = "0" + str;
+          }
+          return str;
+        }
+
+        // NUBE
+        var imageContainer_nube = document.getElementById(
+          "imageContainer_nube"
+        );
+
+        // Número total de imágenes
+        var totalImages_nube = 240; // Ajusta según sea necesario
+
+        for (var i = 0; i < totalImages_nube; i++) {
+          var imageName = "./nube/Cloud" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+          var img = document.createElement("img");
+
+          // Configura la clase y el atributo src para la primera imagen
+          if (i === 0) {
+            img.className = "active";
+          }
+
+          img.src = imageName;
+
+          // Agrega la imagen al contenedor
+          imageContainer_nube.appendChild(img);
+        }
+
+        var images_nube = imageContainer_nube.getElementsByTagName("img");
+        var currentIndex_nube = 0;
+
+        var interval_nube = setInterval(function () {
+          var activeImage = images_nube[currentIndex_nube];
+          activeImage.style.display = "none";
+
+          currentIndex_nube = (currentIndex_nube + 1) % images_nube.length;
+
+          var nextImage_nube = images_nube[currentIndex_nube];
+          nextImage_nube.style.display = "block";
+          nextImage_nube.classList.add("active");
+          activeImage_nube.classList.remove("active");
+        }, 30);
+
+        // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+        function pad(number, length) {
+          var str = String(number);
+          while (str.length < length) {
+            str = "0" + str;
+          }
+          return str;
+        }
+
+        // MONITOREO
+        var imageContainer_monitoreo = document.getElementById(
+          "imageContainer_monitoreo"
+        );
+
+        // Número total de imágenes
+        var totalImages_monitoreo = 180; // Ajusta según sea necesario
+
+        for (var i = 0; i < totalImages_monitoreo; i++) {
+          var imageName = "./monitoreo/Monitoreo" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+          var img = document.createElement("img");
+
+          // Configura la clase y el atributo src para la primera imagen
+          if (i === 0) {
+            img.className = "active";
+          }
+
+          img.src = imageName;
+
+          // Agrega la imagen al contenedor
+          imageContainer_monitoreo.appendChild(img);
+        }
+
+        var images_monitoreo =
+          imageContainer_monitoreo.getElementsByTagName("img");
+        var currentIndex_monitoreo = 0;
+
+        var interval_monitoreo = setInterval(function () {
+          var activeImage = images_monitoreo[currentIndex_monitoreo];
+          activeImage.style.display = "none";
+
+          currentIndex_monitoreo =
+            (currentIndex_monitoreo + 1) % images_monitoreo.length;
+
+          var nextImage_monitoreo = images_monitoreo[currentIndex_monitoreo];
+          nextImage_monitoreo.style.display = "block";
+          nextImage_monitoreo.classList.add("active");
+          activeImage_monitoreo.classList.remove("active");
+        }, 30);
+
+        // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+        function pad(number, length) {
+          var str = String(number);
+          while (str.length < length) {
+            str = "0" + str;
+          }
+          return str;
+        }
+
+        // REDES
+        var imageContainer_redes = document.getElementById(
+          "imageContainer_redes"
+        );
+
+        // Número total de imágenes
+        var totalImages_redes = 180; // Ajusta según sea necesario
+
+        for (var i = 0; i < totalImages_redes; i++) {
+          var imageName = "./redes/Redes" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+          var img = document.createElement("img");
+
+          // Configura la clase y el atributo src para la primera imagen
+          if (i === 0) {
+            img.className = "active";
+          }
+
+          img.src = imageName;
+
+          // Agrega la imagen al contenedor
+          imageContainer_redes.appendChild(img);
+        }
+
+        var images_redes =
+          imageContainer_redes.getElementsByTagName("img");
+        var currentIndex_redes = 0;
+
+        var interval_redes = setInterval(function () {
+          var activeImage = images_redes[currentIndex_redes];
+          activeImage.style.display = "none";
+
+          currentIndex_redes =
+            (currentIndex_redes + 1) % images_redes.length;
+
+          var nextImage_redes = images_redes[currentIndex_redes];
+          nextImage_redes.style.display = "block";
+          nextImage_redes.classList.add("active");
+          activeImage_redes.classList.remove("active");
+        }, 30);
+
+        // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+        function pad(number, length) {
+          var str = String(number);
+          while (str.length < length) {
+            str = "0" + str;
+          }
+          return str;
+        }
+      });
+
+      //   document.addEventListener("DOMContentLoaded", function () {
+      //     var imageContainer = document.getElementById("imageContainer");
+
+      //     // Número total de imágenes
+      //     var totalImages = 241; // Ajusta según sea necesario
+
+      //     for (var i = 0; i < totalImages; i++) {
+      //       var imageName = "HCI_Anim" + pad(i, 4) + ".png"; // Asegura que el número tenga 4 dígitos
+      //       var img = document.createElement("img");
+
+      //       // Configura la clase y el atributo src para la primera imagen
+      //       if (i === 0) {
+      //         img.className = "active";
+      //       }
+
+      //       img.src = imageName;
+
+      //       // Agrega la imagen al contenedor
+      //       imageContainer.appendChild(img);
+      //     }
+
+      //     var images = imageContainer.getElementsByTagName("img");
+      //     var currentIndex = 0;
+
+      //     var interval = setInterval(function () {
+      //       var activeImage = images[currentIndex];
+      //       activeImage.style.display = "none";
+
+      //       currentIndex = (currentIndex + 1) % images.length;
+
+      //       var nextImage = images[currentIndex];
+      //       nextImage.style.display = "block";
+      //       nextImage.classList.add("active");
+      //       activeImage.classList.remove("active");
+      //     }, 30);
+
+      //     // Función para rellenar ceros a la izquierda hasta alcanzar una cierta longitud
+      //     function pad(number, length) {
+      //       var str = String(number);
+      //       while (str.length < length) {
+      //         str = "0" + str;
+      //       }
+      //       return str;
+      //     }
+      //   });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
